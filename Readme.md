@@ -7,12 +7,12 @@ The project is built upon the backdrop of the increasing demand for a streamline
 
 ## Authors
 
-1. Abhishek Bhatt (<ab221302@dal.ca>) 
-2. Naveen Kunapaneni (<Nv676973@dal.ca>)
-3. Parshva Shah (<Pr371441@dal.ca>)
-4. Rahul Saliya (<rh627245@dal.ca>)
-5. Siddhesh Salve (<Sd264348@dal.ca>)
-6. Sindhu Bhimavarapu (<ssindhu@dal.ca>)
+1. Abhishek Bhatt
+2. Naveen Kunapaneni
+3. Parshva Shah
+4. Rahul Saliya
+5. Siddhesh Salve
+6. Sindhu Bhimavarapu
 
 ## Testing
 
@@ -33,45 +33,6 @@ The individual contributions for developing the backend of our application is me
 
 ## 1. User Management[16]
 
-### Author: [Parshva Shah](pr371441@dal.ca)
-
-### List of Files Included
-
-1. `csci-5709-grp-18/frontend/src/screens/Login/Login.js`
-2. `csci-5709-grp-18/frontend/src/screens/AdminLogin/AdminLogin.css`
-3. `csci-5709-grp-18/frontend/src/screens/AdminLogin/AdminLogin.js`
-4. `csci-5709-grp-18/frontend/src/screens/AdminLogin/index.js`
-5. `csci-5709-grp-18/frontend/src/screens/ForgotPassword/ForgotPassword.js`
-6. `csci-5709-grp-18/frontend/src/screens/ForgotPassword/ForgotPassword.css`
-7. `csci-5709-grp-18/frontend/src/screens/ResetPassword/ResetPassword.js`
-8. `csci-5709-grp-18/frontend/src/screens/ResetPassword/ResetPassword.css`
-9. `csci-5709-grp-18/frontend/src/screens/ForgotPassword/index.js`
-10. `csci-5709-grp-18/frontend/src/screens/ResetPassword/index.js`
-11. `csci-5709-grp-18/backend/routes/login.js`
-12. `csci-5709-grp-18/backend/routes/signup.js`
-13. `csci-5709-grp-18/backend/routes/resetpass.js`
-14. `csci-5709-grp-18/backend/routes/validateemail.js`
-15. `csci-5709-grp-18/backend/routes/adminlogin.js`
-
-#### This is a test for the Signup API.
-
-```
-{ 
-
-  "Username": "Parshva",
-
-  "Email": "parshva.shah@dal.ca",
-
-  "Password": "Test@123"
-
-  "ConfirmPassword": "Test@123"
-}
-```
-
-| API Name      | URL Path     | Type | Request                                                                           | Body |
-| ------------- | ------------ | ---- | --------------------------------------------------------------------------------- | ---- |
-| Post response | POST /signup | POST | `{"username": "Parshva", "email": "parshva.shah@dal.ca", "password": "Test@123"}` |
-
 For testing the APIs, users can access the signup & login page by clicking on the signup/login button in the navigation bar. Through this page, users can signup and login while planning to book their desired travel packages.
 
 The user dashboard serves as the gateway for users to interact with the signup and login page for registering their account. The seamless flow from the user dashboard to the sign-up & login page ensures a straightforward and user-friendly experience for users when accessing the registration process. If the user forgets the password user can always select on forgot password button on the login page.
@@ -82,22 +43,6 @@ After the user registers their account through sign up page, they will be redire
 
 ![Profile page](https://res.cloudinary.com/datzhsgw6/image/upload/v1690319912/Trip%27nGo/Screenshot_2023-07-25_181814_ccgenz.png)
 
-#### This is a test for the Login API.
-
-```
-{ 
-
-  "Email": "parshva.shah@dal.ca",
-
-  "password": Test@123"
-
-}
-```
-
-| API Name      | URL Path    | Type | Request Body                                                | Response Body                            |
-| ------------- | ----------- | ---- | ----------------------------------------------------------- | ---------------------------------------- |
-| Post response | POST /login | POST | `{ "email": "parshva.shah@dal.ca", "password": "Test@123"}` | User will be redirected to the Dashboard |
-
 Parshva created Login backend API to fetch the user email and password from frontend. Once the user enters the details and clicks on the Login button, my backend will validate the values with database and if details are correct, it redirects the user to dashboard page. For invalid email it will showcase a message 'User does not exist! Please enter correct email or Signup'. If password is incorrect it will show 'invalid password'. The test case for Login APi is shared in above data and below images.
 
 ![Login Page](https://res.cloudinary.com/datzhsgw6/image/upload/v1690317000/Trip%27nGo/Screenshot_2023-07-25_135809_fjawiy.png)
@@ -105,25 +50,6 @@ Parshva created Login backend API to fetch the user email and password from fron
 After the user is logged in successfully, they will be redirected to the home page of the website.
 
 ![Home Page](https://res.cloudinary.com/datzhsgw6/image/upload/v1690317453/Trip%27nGo/Screenshot_2023-07-25_173641_yif7cu.png)
-
-#### Test data for Forgot Password
-
-```
-{ 
-
-    Email : parshva.shah@dal.ca,
-
-    OTP: '348652' ,
-
-    New Password:'Testing@123',
-
-    Confirm Password:'Testing@123'
-}
-```
-
-| API Name      | URL Path         | Type | Request Body                                                       | Response Body                         |
-| ------------- | ---------------- | ---- | ------------------------------------------------------------------ | ------------------------------------- |
-| Post response | POST /reset-pass | POST | `{ "email": "parshva.shah@dal.ca", "New Password": "Testing@123"}` | User will be redirected to Login page |
 
 If the user forgets the password and clicks on it then they will get redirected to '/forgotpassword' page which will ask for their email. For that Parshva has created backend API '/validate-email' which checks for the valid emailid and if it is correct the user will receive the OTP.
 
@@ -137,22 +63,6 @@ After the user enters the new password and confirms it, the user is navigated ba
 
 ![Reset Password page](https://res.cloudinary.com/datzhsgw6/image/upload/v1690317955/Trip%27nGo/Screenshot_2023-07-25_151643_vth4mx.png)
 
-#### This is a test for the Admin login API.
-
-```
-{ 
-
-  "Email": "admin@gmail.com",
-
-  "Password": "Admin@1234"
-
-}
-```
-
-| API Name      | URL Path    | Type | Request Body                                              | Response Body                                               |
-| ------------- | ----------- | ---- | --------------------------------------------------------- | ----------------------------------------------------------- |
-| Post response | POST /login | POST | `{ "email": "admin@gmail.com", "password": "Admin@1234"}` | User will be redirected to the Admin side contact-list page |
-
 Parshva has created admin side login page '/admin' which is used explicitely for the admins to handle the contact-us messages recieved and enter new promo codes from admin side see below image . If the user tries to enter their email id and password on this page they will receive this message 'User is not authorized as an admin'.
 
 ![Admin Login page](https://res.cloudinary.com/datzhsgw6/image/upload/v1690317893/Trip%27nGo/Screenshot_2023-07-25_152249_jnmfzj.png)
@@ -163,46 +73,6 @@ If the correct credentials are used for Admin login then it will redirect the ad
 
 ## 2. Profile Management[17]
 
-### Author: [Siddhesh Salve](Sd264348@dal.ca)
-
-## List of Files Included
-
-1. `csci-5709-grp-18/frontend/src/screens/ProfilePage/index.js`
-2. `csci-5709-grp-18/backend/routes/profile.js`
-3. `csci-5709-grp-18/frontend/src/screens/ProfilePage/ProfilePage.css`
-4. `csci-5709-grp-18/frontend/src/screens/ProfilePage/ProfilePage.js`
-5. `csci-5709-grp-18/frontend/src/screens/Login/Login.js`
-6. `csci-5709-grp-18/backend/app.js`
-7. `csci-5709-grp-18/frontend/src/constants.js`
-8. `csci-5709-grp-18/frontend/src/index.js`
-
-### This the test data for the profile page.
-
-```
-{
-  "_id": {
-    "$oid": "64bed0e02053390afa909e8b"
-  },
-  "name": "John Doe",
-  "age": "31",
-  "gender": "male",
-  "dateOfBirth": "1993-07-01",
-  "city": "Los Angeles",
-  "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  "street": "456 Oak Avenue",
-  "addressCity": "Los Angeles",
-  "state": "CA",
-  "country": "USA",
-  "email": "sid@example.com",
-  "phone": "9876543210",
-  "profileImage": "base64 Image"
-}
-```
-
-| API Name      | URL Path | Type                                | Request Body                                       | Response Body |
-| ------------- | -------- | ----------------------------------- | -------------------------------------------------- | ------------- |
-| Post response | POST /   | `{"email": "john.doe@example.com"}` | details will be populated in the user profile page |
-
 To test the payment APIs, users can initiate the process by login to the website then the user is dircted to dashboard. when the user clicks on the profile icon the user is redirected to profile page and the user details will be populated in the user profile page.
 
 ![Login](https://res.cloudinary.com/djaxleu2q/image/upload/v1690404290/web/eibm5xkx0cxvt5c3ymoq.jpg)
@@ -211,32 +81,6 @@ To test the payment APIs, users can initiate the process by login to the website
 
 ![Profile Page](https://res.cloudinary.com/djaxleu2q/image/upload/v1690404288/web/ole66b5ajrlgj4x4fpup.jpg)
 
-#### Test data for testing update in profile page
-
-```
-{
-  "_id": {
-    "$oid": "64bed0e02053390afa909e8b"
-  },
-  "name": "John Doe",
-  "age": "20",
-  "gender": "male",
-  "dateOfBirth": "2000-07-01",
-  "city": "Los Angeles",
-  "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  "street": "1333 south park street",
-  "addressCity": "Los Angeles",
-  "state": "NS",
-  "country": "CA",
-  "email": "sid.doe@example.com",
-  "phone": "7894563215",
-  "profileImage": "base64 Image"
-}
-```
-
-| API Name     | URL Path | Type | Request Body                        | Response Body                                      |
-| ------------ | -------- | ---- | ----------------------------------- | -------------------------------------------------- |
-| Put response | Put /:id | POST | `{"email": "john.doe@example.com"}` | details will be populated in the user profile page |
 
 To test the payment APIs, users can initiate the process by clicking on the update profile button. Then a modal with the users existing details is displayed. now the user can update the details in the modal and click on save changes. The user will be able to see the updated details on the page as well as the details will be updated in the backend.
 
@@ -246,32 +90,6 @@ To test the payment APIs, users can initiate the process by clicking on the upda
 
 ![After clicking save changes](https://res.cloudinary.com/djaxleu2q/image/upload/v1690404288/web/a37vhmfljlqncdrmkd5b.jpg)
 
-##### Test data for testing update image in profile page
-
-```
-{
-  "_id": {
-    "$oid": "64bed0e02053390afa909e8b"
-  },
-  "name": "John Doe",
-  "age": "36",
-  "gender": "male",
-  "dateOfBirth": "2000-07-01",
-  "city": "Los Angeles",
-  "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  "street": "1333 south park street",
-  "addressCity": "Los Angeles",
-  "state": "NS",
-  "country": "CA",
-  "email": "john.doe@example.com",
-  "phone": "7894563215",
-  "profileImage": "base64 Image"
-}
-```
-
-| API Name      | URL Path        | Type | Request Body                        | Response Body                                      |
-| ------------- | --------------- | ---- | ----------------------------------- | -------------------------------------------------- |
-| Post response | Post /image/:id | POST | `{"profileImage": "base 64 image"}` | details will be populated in the user profile page |
 
 To test the payment APIs, users can initiate the process by clicking on the update profile image button. Then a modal with the users will be allowed to select an image from the device to upload. The user will click on save changes. The user will be able to see the updated image on the page as well as the image will be updated in the backend.
 
@@ -282,43 +100,6 @@ To test the payment APIs, users can initiate the process by clicking on the upda
 ![save changes](https://res.cloudinary.com/djaxleu2q/image/upload/v1690404288/web/awiju8vfdgjibcytllpx.jpg)
 
 ## 3. Dashboard & Notifications[18]
-
-### Author: [Rahul Saliya](rh627245@dal.ca)
-
-### List of Files Created
-
-1. `csci-5709-grp-18/frontend/src/components/Footer/Footer.js`
-2. `csci-5709-grp-18/frontend/src/components/Footer/Footer.css`
-3. `csci-5709-grp-18/frontend/src/components/Footer/index.js`
-4. `csci-5709-grp-18/frontend/src/components/Header/Header.css`
-5. `csci-5709-grp-18/frontend/src/components/Header/Header.js`
-6. `csci-5709-grp-18/frontend/src/components/Header/index.js`
-7. `csci-5709-grp-18/frontend/src/components/Spacer/Spacer.js`
-8. `csci-5709-grp-18/frontend/src/components/Spacer/index.js`
-9. `csci-5709-grp-18/frontend/src/components/TripItem/TripItem.js`
-10. `csci-5709-grp-18/frontend/src/components/TripItem/TripItem.css`
-11. `csci-5709-grp-18/frontend/src/components/TripItem/index.js`
-12. `csci-5709-grp-18/frontend/src/screens/Dashboard/Dashboard.css`
-13. `csci-5709-grp-18/frontend/src/screens/Dashboard/Dashboard.js`
-14. `csci-5709-grp-18/frontend/src/screens/Dashboard/index.js`
-15. `csci-5709-grp-18/frontend/src/screens/Dashboard/TripItems.js`
-16. `csci-5709-grp-18/frontend/src/screens/Page404/index.js`
-17. `csci-5709-grp-18/frontend/src/screens/Page404/Page404.js`
-18. `csci-5709-grp-18/frontend/src/screens/Page404/Page404.css`
-19. `csci-5709-grp-18/frontend/src/Constants.js`
-20. `csci-5709-grp-18/backend/conn.js`
-21. `csci-5709-grp-18/backend/routes/dashboard.js`
-22. `csci-5709-grp-18/backend/routes/notifications.js`
-
-### APIs Created
-
-| API Name          | Description                                                              | URL Path                  | Type | Request Body                                                                                                                                                                       |
-| ----------------- | ------------------------------------------------------------------------ | ------------------------- | ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Get Popular Trips | To get the popular trips.                                                | /dashboard/popular-trips  | GET  |                                                                                                                                                                                    |
-| Get Nearby trips  | To get the nearby trips.                                                 | /dashboard/trips-near-you | GET  |                                                                                                                                                                                    |
-| Get Notifications | To get the notifications.                                                | /notifications            | GET  |                                                                                                                                                                                    |
-| Send Notification | To send the notification.                                                | /notifications            | POST | `{ id: 1, userId: 1, title: "Notification 1", description: "This is notification 1", date: "2020-01-01", time: "12:00", payload: { type: "event", url: "https://www.google.com" }` |
-| Socket.io         | To get the socket.io connection for receiving notifications in realtime. | /                         | GET  |                                                                                                                                                                                    |
 
 - Dashboard
 
@@ -332,28 +113,6 @@ Rahul has also created the notifications popup which is used to display the noti
 
 ## 4. Contact-Us & Payment Gateway[19]
 
-### Author: [Abhishek Bhatt](ab221302@dal.ca)
-
-#### This the test for the Contact_us APIs.
-
-```
-{ 
-
-  "name": "John Doe",
-
-  "email": "john@example.com",
-
-  "message": "This is a test message"
-
-}
-```
-
-| API Name         | URL Path                | Type   | Request                                                                              | Body |
-| ---------------- | ----------------------- | ------ | ------------------------------------------------------------------------------------ | ---- |
-| Post response    | POST /contact-us        | POST   | `{"name": "test", "email": "john@example.com", "message": "This is a test message"}` |
-| get all response | GET /contact-us         | GET    |                                                                                      |
-| delete by Id     | DELETE /contact-us/{id} | DELETE |                                                                                      |
-
 ![Alt text Img 1](https://res.cloudinary.com/dujnfk24p/image/upload/v1690305604/dly3lguqv06ak1mokam6.png)
 
 After the user submits their response through the contact-us page, they will receive the following message:
@@ -366,23 +125,6 @@ As an admin, when you log in and navigate to the contact-list page, you will hav
 
 By clicking on delete button admin can delete the given feedback by users.
 
-#### This the test for the Payment gateway APIs.
-
-```
-{ 
-
-  "name": "John Doe",
-
-  "package name": "Halifax",
-
-  "discounted_amount": "1000"
-
-}
-```
-
-| API Name      | URL Path      | Type | Request Body                                                                   | Response Body                                  |
-| ------------- | ------------- | ---- | ------------------------------------------------------------------------------ | ---------------------------------------------- |
-| Post response | POST /payment | POST | `{"name": "John Doe", "package name": "Halifax", "discounted_amount": "1000"}` | userr will be redirected to the stripe gateway |
 
 ![Alt text](https://res.cloudinary.com/dujnfk24p/image/upload/v1690305604/fwvwweadcnpegfchfptw.png)
 
@@ -392,55 +134,8 @@ After the user submits their response, they will be redirected to the Stripe pay
 
 After the user fills up the required details and completes the payment, the gateway will utilize a webhook to send a notification to the actual website. This notification will contain a success or failure message and will navigate the user to either the dashboard or the payment page, based on the received response.
 
-#### Test data for testing payment gateway
-
-```
-{ 
-
-  email : test@gmail.com,
-
-  card number : 4242 4242 4242 4242 ,
-
-  Exp date : Any date (it should be after today's date)
-
-  cvv : Any random 3 digits
-
-  Card name : Any random name
-
-  Postal code : (Have to add actual postal code for Canada.)
-
-}
-```
 
 ## 5. Wishlist Feature[20]
-
-### Author: [Naveen Kunapaneni](nv676973@dal.ca)
-
-#### List of Files Included
-
-1. `csci-5709-grp-18/frontend/src/screens/Wishlist/wishlist.js`
-2. `csci-5709-grp-18/backend/routes/wishlist.js`
-3. `csci-5709-grp-18/frontend/src/screens/Wishlist/wishlist.css`
-4. `csci-5709-grp-18/frontend/src/screens/Wishlist/index.js`
-5. `csci-5709-grp-18/frontend/src/screens/Dashboard/Dashboard.js`
-6. `csci-5709-grp-18/frontend/src/screens/Dashboard/Dashboard.css`
-7. `csci-5709-grp-18/frontend/src/components/TripItem/TripItem.js`
-8. `csci-5709-grp-18/frontend/src/components/TripItem/TripItem.css`
-9. `csci-5709-grp-18/backend/app.js`
-
-#### This the test for the Wishlist APIs.
-
-Body Naveen has used in testing the API endpoint.
-
-```
-{
-    "id": [1,2,14]
-}
-```
-
-| API Name                      | URL Path                | Type | Request | Body |
-| ----------------------------- | ----------------------- | ---- | ------- | ---- |
-| POST wishlist package details | POST /wishlist/packages | POST |         |
 
 ![Postman Testing](https://res.cloudinary.com/daqjl702r/image/upload/v1690388159/Web-5709/jl6qrgc0x9pe4aq0mpz4.png)
 
@@ -448,24 +143,7 @@ Body Naveen has used in testing the API endpoint.
 
 ![wishlist](https://res.cloudinary.com/daqjl702r/image/upload/v1690388159/Web-5709/qjiwzh3jymbp7ikbdkyl.png)
 
-## 6. Travel package list, Search & Filter[21]
-
-### Author: [Sindhu Bhimavarapu](ssindhu@dal.ca)
-
-## List of Files Included
-
-1. `csci-5709-grp-18/frontend/src/screens/MoreTrips/MoreTrips.js`
-2. `csci-5709-grp-18/frontend/src/screens/MoreTrips/index.js`
-3. `csci-5709-grp-18/backend/routes/moretrips.js`
-
-
-#### API Endpoints for More Trips Page
-
-| API Name                | URL Path                                                   | Type | Request Body (if applicable) |
-| ----------------------- | ---------------------------------------------------------- | ---- | ---------------------------- |
-| Get all travel packages | GET /moretrips/allPackages                                 | GET  |                              |
-| Filter by Location      | GET /moretrips?location={location}                         | GET  |                              |
-| Filter by Price Range   | GET /moretrips/filterByPrice?minPrice={min}&maxPrice={max} | GET  |                              
+## 6. Travel package list, Search & Filter[21]          
 
 - Main page of all packages availabe: 
 ![Alt text](https://res.cloudinary.com/dv0rdcdpa/image/upload/v1690410006/packageslistingpage_vu6bse.png)
